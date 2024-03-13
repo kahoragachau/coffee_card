@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: Scaffold(
-      appBar: AppBar(
-        title: const Text('My Coffee Id'),
-        backgroundColor: Colors.brown[700],
-        centerTitle: true,
-      ),
-      body: const Home(),
-    ),
+  runApp(const MaterialApp(
+    home: Home()
   ));
 }
 
@@ -18,7 +11,14 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('My Coffee Id'),
+        backgroundColor: Colors.brown[700],
+        centerTitle: true,
+      ),
+      body: const Home(),
+    );
   }
 }
 
