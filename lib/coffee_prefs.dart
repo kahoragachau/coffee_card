@@ -10,12 +10,19 @@ class CoffeePrefs extends StatefulWidget {
 }
 
 class _CoffeePrefsState extends State<CoffeePrefs> {
+  
+  int strength = 1;
+  int sugars = 1;
   void increamentSugar() {
-    
+    setState(() {
+      sugars = sugars < 5 ? sugars + 1 : 0;
+    });
   }
 
   void increamentStrength () {
-    print('Increment Coffee Strength');
+    setState(() {
+      strength = strength < 5 ? strength + 1: 1;
+    });
   }
 
   @override
@@ -25,7 +32,7 @@ class _CoffeePrefsState extends State<CoffeePrefs> {
         Row(
           children: [
             const Text('Strength: '),
-            const Text('3'),
+            Text('$strength'),
             Image.asset('assets/img/coffee_bean.png',
               width: 25,
               color: Colors.brown[100],
@@ -46,7 +53,7 @@ class _CoffeePrefsState extends State<CoffeePrefs> {
         Row(
           children: [
             const Text('Sugars: '),
-            const Text('3'),
+            Text('$sugars'),
             Image.asset('assets/img/sugar_cube.png',
               width: 25,
               color: Colors.brown[100],
