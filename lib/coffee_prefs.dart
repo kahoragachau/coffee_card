@@ -1,7 +1,17 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 
 class CoffeePrefs extends StatelessWidget {
   const CoffeePrefs({super.key});
+
+  void increamentSugar() {
+    print('Incremented Sugar');
+  }
+
+  void increamentStrength () {
+    print('Increment Coffee Strength');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +26,19 @@ class CoffeePrefs extends StatelessWidget {
               color: Colors.brown[100],
               colorBlendMode: BlendMode.multiply,
             ),
-            const SizedBox(width: 50),
+            const Expanded(child: SizedBox()),
+            FilledButton(
+              style: FilledButton.styleFrom(
+                backgroundColor: Colors.brown,
+                foregroundColor: Colors.white
+              ),
+            onPressed: increamentStrength, 
+            child: const Text('+'),
+            )
+
           ],
         ),
-                Row(
+        Row(
           children: [
             const Text('Sugars: '),
             const Text('3'),
@@ -28,7 +47,15 @@ class CoffeePrefs extends StatelessWidget {
               color: Colors.brown[100],
               colorBlendMode: BlendMode.multiply,
             ),
-            const SizedBox(width: 50),
+            const Expanded(child: SizedBox()),
+            FilledButton(
+              style: FilledButton.styleFrom(
+                backgroundColor: Colors.brown,
+                foregroundColor: Colors.white
+              ),
+            onPressed: increamentSugar, 
+            child: const Text('+'),
+            ),
           ],
         )
       ],
